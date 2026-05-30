@@ -13,7 +13,8 @@
 ## 运行
 
 ```bash
-python3 -m http.server 4173
+npm install
+npm run dev
 ```
 
 然后打开：
@@ -35,3 +36,26 @@ http://127.0.0.1:4173/
 - 点击“重置存档”会清空本地存档并重新生成初始鱼群。
 
 数据会保存在浏览器 `localStorage` 里，刷新页面不会丢失当前鱼群。
+
+## iOS App
+
+项目已经接入 Capacitor，静态游戏会构建到 `dist/`，再同步到 iOS 工程。
+
+```bash
+npm install
+npm run ios:sync
+```
+
+在 macOS 上安装 Xcode 和 CocoaPods 后，打开：
+
+```text
+ios/App/App.xcworkspace
+```
+
+也可以运行：
+
+```bash
+npm run ios:open
+```
+
+在 Windows 环境只能生成和同步 iOS 工程；真机运行、模拟器调试、签名和 App Store/TestFlight 打包需要在 macOS + Xcode 中完成。

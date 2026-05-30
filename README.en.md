@@ -15,7 +15,8 @@ The current visual direction uses a clear chibi cartoon style with bold outlines
 ## Run
 
 ```bash
-python3 -m http.server 4173
+npm install
+npm run dev
 ```
 
 Open:
@@ -25,3 +26,26 @@ http://127.0.0.1:4173/
 ```
 
 Progress is saved in browser `localStorage`.
+
+## iOS App
+
+The project now uses Capacitor. The static game is built into `dist/` and synced into the iOS project.
+
+```bash
+npm install
+npm run ios:sync
+```
+
+On macOS with Xcode and CocoaPods installed, open:
+
+```text
+ios/App/App.xcworkspace
+```
+
+You can also run:
+
+```bash
+npm run ios:open
+```
+
+Windows can generate and sync the iOS project, but simulator/device runs, code signing, and App Store/TestFlight builds require macOS + Xcode.
