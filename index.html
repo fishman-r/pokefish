@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokefish</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <p class="eyebrow">微信放置小游戏</p>
+            <h1>Pokefish</h1>
+          </div>
+        </div>
+        <div class="resource-strip" aria-label="资源">
+          <div>
+            <span>泡泡币</span>
+            <strong id="bubbleCoins">0</strong>
+          </div>
+          <div>
+            <span>贝壳</span>
+            <strong id="shells">0</strong>
+          </div>
+          <div>
+            <span>鱼蛋</span>
+            <strong id="eggs">0</strong>
+          </div>
+          <div>
+            <span>珍珠</span>
+            <strong id="pearls">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-nav" aria-label="主要页面">
+        <button class="nav-button active" data-screen-target="pond">鱼塘</button>
+        <button class="nav-button" data-screen-target="hatchery">孵化</button>
+        <button class="nav-button" data-screen-target="collection">图鉴</button>
+        <button class="nav-button" data-screen-target="explore">探索</button>
+        <button class="nav-button" data-screen-target="quests">任务</button>
+      </nav>
+
+      <main class="prototype-grid app-screen active" data-screen="pond">
+        <section class="pond-panel" aria-labelledby="pondTitle">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">主水域</p>
+              <h2 id="pondTitle">鱼塘</h2>
+            </div>
+            <div class="pond-mode" role="group" aria-label="水域选择">
+              <button class="mode-button active" data-pond="starter">新手池塘</button>
+              <button class="mode-button" data-pond="coral">珊瑚浅湾</button>
+              <button class="mode-button" data-pond="moon">月光湖</button>
+            </div>
+          </div>
+
+          <div class="pond-stage">
+            <canvas id="pondCanvas" width="960" height="560" aria-label="Pokefish 鱼塘"></canvas>
+            <div class="pond-overlay">
+              <div>
+                <span>当前水域</span>
+                <strong id="pondName">新手池塘</strong>
+              </div>
+              <div>
+                <span>鱼群产出</span>
+                <strong id="idleRate">0 / 分钟</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-bar" aria-label="鱼塘操作">
+            <button id="collectButton" class="primary-button">收取放置产出</button>
+            <button id="hatchButton" class="tool-button">孵化鱼蛋</button>
+            <button id="shareButton" class="tool-button">生成鱼卡</button>
+          </div>
+        </section>
+
+        <aside class="detail-panel" aria-labelledby="detailTitle">
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow">当前伙伴</p>
+              <h2 id="detailTitle">独一无二的鱼</h2>
+            </div>
+          </div>
+          <div id="fishDetail" class="fish-detail"></div>
+
+          <div class="evolution-lab">
+            <div class="section-head compact">
+              <div>
+                <p class="eyebrow">养成</p>
+                <h2>意外进化</h2>
+              </div>
+            </div>
+
+            <label class="field-label" for="foodSelect">投喂材料</label>
+            <select id="foodSelect">
+              <option value="basic">基础浮游生物</option>
+              <option value="glow">发光浮游生物</option>
+              <option value="coral">珊瑚粉</option>
+              <option value="spicy">刺激海藻</option>
+            </select>
+
+            <div class="chance-box">
+              <div>
+                <span>进化概率</span>
+                <strong id="evolutionChance">0%</strong>
+              </div>
+              <div class="chance-track" aria-hidden="true">
+                <span id="chanceFill"></span>
+              </div>
+            </div>
+
+            <ul id="conditionList" class="condition-list"></ul>
+            <button id="evolveButton" class="primary-button full">尝试进化</button>
+          </div>
+        </aside>
+      </main>
+
+      <section class="hatchery-grid app-screen" data-screen="hatchery">
+        <div class="hatch-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">鱼蛋工坊</p>
+              <h2>孵化舱</h2>
+            </div>
+            <button id="quickHatchButton" class="primary-button compact-button">立即孵化</button>
+          </div>
+          <div id="hatchSlots" class="hatch-slots"></div>
+        </div>
+
+        <div class="hatch-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">补给</p>
+              <h2>鱼蛋与饲料</h2>
+            </div>
+          </div>
+          <div id="eggShop" class="shop-grid"></div>
+        </div>
+      </section>
+
+      <section class="lower-grid app-screen" data-screen="collection">
+        <div class="roster-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">图鉴</p>
+              <h2>鱼群收集</h2>
+            </div>
+            <button id="sortButton" class="tool-button slim">按稀有度排序</button>
+          </div>
+          <div id="collectionSummary" class="collection-summary"></div>
+          <div id="fishRoster" class="fish-roster"></div>
+        </div>
+
+        <div class="log-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">物种图鉴</p>
+              <h2>已发现路线</h2>
+            </div>
+          </div>
+          <div id="speciesDex" class="species-dex"></div>
+        </div>
+      </section>
+
+      <section class="explore-grid app-screen" data-screen="explore">
+        <div class="explore-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">远行</p>
+              <h2>派鱼探索</h2>
+            </div>
+          </div>
+          <div id="exploreList" class="explore-list"></div>
+        </div>
+        <div class="explore-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">当前伙伴</p>
+              <h2>探索适性</h2>
+            </div>
+          </div>
+          <div id="exploreDetail" class="explore-detail"></div>
+        </div>
+      </section>
+
+      <section class="quest-grid app-screen" data-screen="quests">
+        <div class="quest-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">今日目标</p>
+              <h2>每日任务</h2>
+            </div>
+            <button id="claimAllButton" class="primary-button compact-button">领取可用奖励</button>
+          </div>
+          <div id="questList" class="quest-list"></div>
+        </div>
+
+        <div class="log-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">记录</p>
+              <h2>鱼塘事件</h2>
+            </div>
+            <button id="resetButton" class="tool-button slim danger">重置存档</button>
+          </div>
+          <ol id="eventLog" class="event-log"></ol>
+        </div>
+      </section>
+    </div>
+
+    <div id="shareModal" class="modal-backdrop" hidden>
+      <div class="share-modal" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">分享</p>
+            <h2 id="shareTitle">鱼卡</h2>
+          </div>
+          <button id="closeShareButton" class="tool-button slim">关闭</button>
+        </div>
+        <div id="shareCard" class="share-card"></div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
