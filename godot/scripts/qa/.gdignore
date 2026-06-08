@@ -1,0 +1,1 @@
+QA scripts run from filesystem paths and are not runtime Godot resources.

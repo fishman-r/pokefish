@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pokefish_action_dock"]
+
+[ext_resource type="Script" path="res://godot/scripts/ui/action_dock.gd" id="1_action_dock"]
+
+[node name="ActionDock" type="Control"]
+script = ExtResource("1_action_dock")

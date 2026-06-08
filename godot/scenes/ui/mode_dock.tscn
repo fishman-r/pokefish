@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pokefish_mode_dock"]
+
+[ext_resource type="Script" path="res://godot/scripts/ui/mode_dock.gd" id="1_mode_dock"]
+
+[node name="ModeDock" type="Control"]
+script = ExtResource("1_mode_dock")

@@ -1,0 +1,317 @@
+<svg width="1600" height="1600" viewBox="0 0 1600 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pageBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EEF7FF"/>
+      <stop offset="1" stop-color="#F8FAFF"/>
+    </linearGradient>
+    <linearGradient id="skyWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#82D9FF"/>
+      <stop offset="0.45" stop-color="#3DBCF4"/>
+      <stop offset="1" stop-color="#1E8EC8"/>
+    </linearGradient>
+    <linearGradient id="deepWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#53CFF6"/>
+      <stop offset="1" stop-color="#126FA8"/>
+    </linearGradient>
+    <linearGradient id="sheetBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F8FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0A1B33" flood-opacity="0.18"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0A1B33" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      @font-face {
+        font-family: "Pokefish Display";
+        src: url("fonts/ZCOOLKuaiLe-Regular.ttf") format("truetype");
+      }
+      .title { font: 400 36px "Pokefish Display", "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #102A48; }
+      .subtitle { font: 600 16px "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #5A6B82; }
+      .screenTitle { font: 400 27px "Pokefish Display", "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #102A48; }
+      .label { font: 600 13px "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #516174; }
+      .small { font: 600 11px "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #63748A; }
+      .tiny { font: 600 10px "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #63748A; }
+      .value { font: 400 20px "Pokefish Display", "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #102A48; }
+      .whiteText { font: 400 16px "Pokefish Display", "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #FFFFFF; }
+      .tabText { font: 600 10px "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #506176; }
+      .tabActive { font: 400 11px "Pokefish Display", "PingFang SC", "Heiti SC", Arial, sans-serif; fill: #102A48; }
+      .inkStroke { stroke: #102A48; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+      .thinStroke { stroke: #102A48; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    </style>
+    <clipPath id="screenClip">
+      <rect x="16" y="16" width="358" height="812" rx="32"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1600" height="1600" fill="url(#pageBg)"/>
+  <text x="70" y="54" class="title">Pokefish 手机游戏版 UI 稿 v0.4</text>
+  <text x="70" y="84" class="subtitle">减字版：名字、数值、动作保留；说明、规则、状态解释图标化或进入弹层</text>
+
+  <g transform="translate(70 126)">
+    <text x="0" y="-20" class="screenTitle">1. 水域首页</text>
+    <rect x="0" y="0" width="390" height="844" rx="44" fill="#091525" filter="url(#shadow)"/>
+    <g clip-path="url(#screenClip)">
+      <rect x="16" y="16" width="358" height="812" rx="32" fill="url(#skyWater)"/>
+      <path d="M16 238 C76 218 126 264 190 238 C260 210 300 246 374 224 L374 828 L16 828 Z" fill="#2EB7E9" opacity="0.56"/>
+      <path d="M16 390 C90 360 140 420 206 386 C262 356 312 392 374 372 L374 828 L16 828 Z" fill="#147BB8" opacity="0.56"/>
+      <path d="M4 720 C90 690 154 720 224 696 C282 676 326 704 390 686 L390 844 L4 844 Z" fill="#F5CF83" class="thinStroke"/>
+
+      <g opacity="0.56">
+        <circle cx="76" cy="240" r="5" fill="#FFFFFF"/>
+        <circle cx="110" cy="292" r="3" fill="#FFFFFF"/>
+        <circle cx="302" cy="260" r="7" fill="#FFFFFF"/>
+        <circle cx="252" cy="350" r="4" fill="#FFFFFF"/>
+        <circle cx="336" cy="434" r="3" fill="#FFFFFF"/>
+      </g>
+
+      <g transform="translate(38 214)">
+        <ellipse cx="66" cy="42" rx="50" ry="28" fill="#FF9A4A" class="inkStroke"/>
+        <path d="M18 42 L-20 18 L-10 42 L-20 66 Z" fill="#65D093" class="inkStroke"/>
+        <path d="M52 16 L76 -8 L88 18" fill="#65D093" class="inkStroke"/>
+        <circle cx="100" cy="32" r="8" fill="#FFFFFF" class="thinStroke"/>
+        <circle cx="103" cy="34" r="3" fill="#102A48"/>
+        <path d="M44 30 C52 44 52 54 44 66" fill="none" stroke="#102A48" stroke-width="3"/>
+        <path d="M70 20 C76 36 76 50 70 64" fill="none" stroke="#102A48" stroke-width="3"/>
+      </g>
+      <g transform="translate(224 320) scale(.72)">
+        <ellipse cx="66" cy="42" rx="52" ry="30" fill="#6CE5DF" class="inkStroke"/>
+        <path d="M18 42 L-18 18 L-8 42 L-18 66 Z" fill="#FFD84A" class="inkStroke"/>
+        <circle cx="102" cy="32" r="8" fill="#FFFFFF" class="thinStroke"/>
+        <circle cx="105" cy="34" r="3" fill="#102A48"/>
+        <circle cx="58" cy="32" r="5" fill="#FFFFFF"/>
+        <circle cx="76" cy="52" r="5" fill="#FFFFFF"/>
+      </g>
+      <g transform="translate(144 456) scale(.82)">
+        <ellipse cx="66" cy="42" rx="50" ry="27" fill="#B983FF" class="inkStroke"/>
+        <path d="M18 42 L-24 20 L-12 42 L-24 64 Z" fill="#FFDF4A" class="inkStroke"/>
+        <circle cx="101" cy="32" r="8" fill="#FFFFFF" class="thinStroke"/>
+        <circle cx="104" cy="34" r="3" fill="#102A48"/>
+        <path d="M46 26 L58 58 M68 24 L80 60" stroke="#102A48" stroke-width="3"/>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="30" y="30" width="330" height="86" rx="22" fill="#FFFFFF" fill-opacity="0.88" class="thinStroke"/>
+        <rect x="46" y="46" width="66" height="26" rx="13" fill="#FFD94A" class="thinStroke"/>
+        <text x="59" y="64" class="label" fill="#102A48">Lv.7</text>
+        <text x="132" y="64" class="value">珊瑚湾</text>
+        <circle cx="330" cy="58" r="14" fill="#F6FAFF" class="thinStroke"/>
+        <path d="M324 58 H336 M330 52 V64" stroke="#102A48" stroke-width="2"/>
+        <g transform="translate(44 82)">
+          <rect x="0" y="0" width="70" height="22" rx="11" fill="#E9F7FF"/>
+          <circle cx="13" cy="11" r="6" fill="#38BDF2"/>
+          <text x="24" y="15" class="tiny">1280</text>
+          <rect x="80" y="0" width="62" height="22" rx="11" fill="#EFFFF5"/>
+          <circle cx="93" cy="11" r="6" fill="#36C772"/>
+          <text x="104" y="15" class="tiny">26</text>
+          <rect x="152" y="0" width="56" height="22" rx="11" fill="#FFF3DB"/>
+          <circle cx="165" cy="11" r="6" fill="#FF9A3D"/>
+          <text x="176" y="15" class="tiny">4</text>
+          <rect x="218" y="0" width="64" height="22" rx="11" fill="#F4ECFF"/>
+          <circle cx="231" cy="11" r="6" fill="#9B65FF"/>
+          <text x="242" y="15" class="tiny">8</text>
+        </g>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="34" y="588" width="196" height="86" rx="24" fill="#FFFFFF" class="inkStroke"/>
+        <circle cx="76" cy="631" r="28" fill="#FFCD55" class="thinStroke"/>
+        <path d="M62 631 C76 612 92 622 92 636 C80 642 70 642 62 631 Z" fill="#FF8B54" class="thinStroke"/>
+        <text x="116" y="624" class="value">橘鳍露露</text>
+        <text x="116" y="646" class="label">R · 12</text>
+        <rect x="116" y="656" width="80" height="8" rx="4" fill="#E7EEF8"/>
+        <rect x="116" y="656" width="58" height="8" rx="4" fill="#36C772"/>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="246" y="586" width="96" height="88" rx="24" fill="#FFD94A" class="inkStroke"/>
+        <text x="278" y="620" class="whiteText" fill="#102A48">收取</text>
+        <text x="282" y="646" class="label">+320</text>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="34" y="690" width="308" height="62" rx="24" fill="#FFFFFF" class="inkStroke"/>
+        <rect x="48" y="704" width="88" height="34" rx="17" fill="#FFD94A" class="thinStroke"/>
+        <text x="76" y="726" class="label">投喂</text>
+        <rect x="144" y="704" width="88" height="34" rx="17" fill="#36C772" class="thinStroke"/>
+        <text x="172" y="726" class="whiteText">进化</text>
+        <rect x="240" y="704" width="88" height="34" rx="17" fill="#F6FAFF" class="thinStroke"/>
+        <text x="268" y="726" class="label">详情</text>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="30" y="768" width="330" height="52" rx="23" fill="#FFFFFF" class="thinStroke"/>
+        <g transform="translate(48 780)">
+          <circle cx="15" cy="10" r="10" fill="#FFD94A" class="thinStroke"/>
+          <text x="3" y="36" class="tabActive">水域</text>
+        </g>
+        <g transform="translate(112 780)">
+          <rect x="5" y="0" width="20" height="20" rx="7" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+        <g transform="translate(176 780)">
+          <rect x="3" y="0" width="24" height="20" rx="5" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+        <g transform="translate(240 780)">
+          <path d="M4 18 L14 2 L26 18 Z" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+        <g transform="translate(304 780)">
+          <circle cx="15" cy="10" r="10" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+      </g>
+    </g>
+    <rect x="16" y="16" width="358" height="812" rx="32" fill="none" stroke="#18263D" stroke-width="2"/>
+    <rect x="140" y="20" width="110" height="25" rx="13" fill="#091525"/>
+  </g>
+
+  <g transform="translate(520 126)">
+    <text x="0" y="-20" class="screenTitle">2. 伙伴 Sheet</text>
+    <rect x="0" y="0" width="390" height="844" rx="44" fill="#091525" filter="url(#shadow)"/>
+    <g clip-path="url(#screenClip)">
+      <rect x="16" y="16" width="358" height="812" rx="32" fill="url(#deepWater)"/>
+      <path d="M16 380 C90 344 150 396 220 360 C280 330 330 364 374 344 L374 828 L16 828 Z" fill="#166FA8" opacity="0.72"/>
+      <rect x="16" y="16" width="358" height="812" fill="#102A48" opacity="0.25"/>
+      <rect x="38" y="38" width="314" height="70" rx="22" fill="#FFFFFF" fill-opacity="0.86" class="thinStroke"/>
+      <text x="58" y="82" class="value">橘鳍露露</text>
+      <rect x="238" y="58" width="72" height="24" rx="12" fill="#FFD94A" class="thinStroke"/>
+      <text x="258" y="75" class="label">珊瑚湾</text>
+      <rect x="16" y="316" width="358" height="512" rx="34" fill="url(#sheetBg)" class="inkStroke" filter="url(#shadow)"/>
+      <rect x="158" y="336" width="74" height="6" rx="3" fill="#B8C6D6"/>
+      <circle cx="105" cy="402" r="48" fill="#FFD94A" class="inkStroke"/>
+      <g transform="translate(60 360) scale(.72)">
+        <ellipse cx="66" cy="42" rx="50" ry="28" fill="#FF9A4A" class="inkStroke"/>
+        <path d="M18 42 L-20 18 L-10 42 L-20 66 Z" fill="#65D093" class="inkStroke"/>
+        <circle cx="100" cy="32" r="8" fill="#FFFFFF" class="thinStroke"/>
+        <circle cx="103" cy="34" r="3" fill="#102A48"/>
+      </g>
+      <text x="168" y="386" class="screenTitle">橘鳍露露</text>
+      <rect x="168" y="402" width="64" height="24" rx="12" fill="#39B8F2" class="thinStroke"/>
+      <text x="184" y="419" class="whiteText">稀有</text>
+      <rect x="240" y="402" width="60" height="24" rx="12" fill="#FFD94A" class="thinStroke"/>
+      <text x="256" y="419" class="label">Lv.12</text>
+      <text x="168" y="450" class="label">42/分</text>
+
+      <g transform="translate(42 478)">
+        <circle cx="14" cy="-4" r="8" fill="#36C772" class="thinStroke"/>
+        <rect x="52" y="-10" width="252" height="12" rx="6" fill="#E7EEF8"/>
+        <rect x="52" y="-10" width="218" height="12" rx="6" fill="#36C772"/>
+        <circle cx="14" cy="34" r="8" fill="#39B8F2" class="thinStroke"/>
+        <rect x="52" y="28" width="252" height="12" rx="6" fill="#E7EEF8"/>
+        <rect x="52" y="28" width="182" height="12" rx="6" fill="#39B8F2"/>
+        <circle cx="14" cy="72" r="8" fill="#FF9A3D" class="thinStroke"/>
+        <rect x="52" y="66" width="252" height="12" rx="6" fill="#E7EEF8"/>
+        <rect x="52" y="66" width="86" height="12" rx="6" fill="#FF9A3D"/>
+      </g>
+
+      <text x="42" y="596" class="value">特性</text>
+      <rect x="42" y="612" width="70" height="26" rx="13" fill="#EAF7FF" class="thinStroke"/>
+      <text x="58" y="630" class="label">暖鳍</text>
+      <rect x="120" y="612" width="70" height="26" rx="13" fill="#F4ECFF" class="thinStroke"/>
+      <text x="136" y="630" class="label">闪纹</text>
+      <rect x="198" y="612" width="82" height="26" rx="13" fill="#EFFFF5" class="thinStroke"/>
+      <text x="214" y="630" class="label">活泼</text>
+
+      <rect x="42" y="664" width="306" height="64" rx="20" fill="#F6FAFF" class="thinStroke"/>
+      <text x="62" y="690" class="label">进化</text>
+      <rect x="148" y="680" width="158" height="14" rx="7" fill="#E4ECF6"/>
+      <rect x="148" y="680" width="96" height="14" rx="7" fill="#FFD94A"/>
+      <text x="312" y="693" class="label">61%</text>
+
+      <rect x="42" y="748" width="142" height="42" rx="21" fill="#FFD94A" class="inkStroke"/>
+      <text x="88" y="775" class="label">投喂</text>
+      <rect x="202" y="748" width="146" height="42" rx="21" fill="#36C772" class="inkStroke"/>
+      <text x="262" y="775" class="whiteText">进化</text>
+    </g>
+    <rect x="16" y="16" width="358" height="812" rx="32" fill="none" stroke="#18263D" stroke-width="2"/>
+    <rect x="140" y="20" width="110" height="25" rx="13" fill="#091525"/>
+  </g>
+
+  <g transform="translate(970 126)">
+    <text x="0" y="-20" class="screenTitle">3. 图鉴页</text>
+    <rect x="0" y="0" width="390" height="844" rx="44" fill="#091525" filter="url(#shadow)"/>
+    <g clip-path="url(#screenClip)">
+      <rect x="16" y="16" width="358" height="812" rx="32" fill="#F6FAFF"/>
+      <rect x="16" y="16" width="358" height="146" rx="32" fill="#82D9FF"/>
+      <rect x="36" y="38" width="318" height="54" rx="20" fill="#FFFFFF" fill-opacity="0.9" class="thinStroke"/>
+      <text x="56" y="61" class="label">Lv.7</text>
+      <text x="56" y="84" class="value">鱼群图鉴</text>
+      <rect x="260" y="54" width="78" height="24" rx="12" fill="#FFD94A" class="thinStroke"/>
+      <text x="280" y="71" class="label">8/42</text>
+
+      <text x="38" y="140" class="screenTitle">图鉴</text>
+      <rect x="38" y="158" width="314" height="78" rx="24" fill="#FFFFFF" class="inkStroke" filter="url(#softShadow)"/>
+      <circle cx="88" cy="197" r="25" fill="none" stroke="#E4ECF6" stroke-width="9"/>
+      <path d="M88 172 A25 25 0 1 1 66 209" fill="none" stroke="#36C772" stroke-width="9" stroke-linecap="round"/>
+      <text x="76" y="203" class="label">19%</text>
+      <text x="128" y="192" class="value">8 / 42</text>
+      <text x="128" y="214" class="small">E · +2</text>
+
+      <g transform="translate(38 256)">
+        <rect x="0" y="0" width="54" height="28" rx="14" fill="#102A48"/>
+        <text x="21" y="19" class="whiteText">全</text>
+        <rect x="62" y="0" width="54" height="28" rx="14" fill="#FFFFFF" class="thinStroke"/>
+        <text x="85" y="19" class="label">C</text>
+        <rect x="124" y="0" width="54" height="28" rx="14" fill="#FFFFFF" class="thinStroke"/>
+        <text x="147" y="19" class="label">R</text>
+        <rect x="186" y="0" width="54" height="28" rx="14" fill="#FFFFFF" class="thinStroke"/>
+        <text x="209" y="19" class="label">E</text>
+        <rect x="248" y="0" width="62" height="28" rx="14" fill="#FFFFFF" class="thinStroke"/>
+        <text x="273" y="19" class="label">L</text>
+      </g>
+
+      <g transform="translate(38 306)">
+        <rect x="0" y="0" width="148" height="144" rx="22" fill="#FFFFFF" class="thinStroke" filter="url(#softShadow)"/>
+        <circle cx="74" cy="48" r="30" fill="#FFD94A" class="thinStroke"/>
+        <path d="M55 48 C66 34 88 38 94 54 C82 62 68 62 55 48 Z" fill="#FF9A4A" class="thinStroke"/>
+        <text x="18" y="102" class="value">橘鳍露露</text>
+        <text x="18" y="124" class="small">R · 12</text>
+
+        <rect x="166" y="0" width="148" height="144" rx="22" fill="#FFFFFF" class="thinStroke" filter="url(#softShadow)"/>
+        <circle cx="240" cy="48" r="30" fill="#DDF8FF" class="thinStroke"/>
+        <path d="M222 48 C236 32 258 38 264 52 C250 62 236 62 222 48 Z" fill="#6CE5DF" class="thinStroke"/>
+        <text x="184" y="102" class="value">月纹泡泡</text>
+        <text x="184" y="124" class="small">E · 9</text>
+
+        <rect x="0" y="164" width="148" height="144" rx="22" fill="#FFFFFF" class="thinStroke" filter="url(#softShadow)"/>
+        <circle cx="74" cy="212" r="30" fill="#EFFFF5" class="thinStroke"/>
+        <path d="M55 212 C70 198 92 202 96 218 C80 224 68 224 55 212 Z" fill="#36C772" class="thinStroke"/>
+        <text x="18" y="266" class="value">青芽小鳍</text>
+        <text x="18" y="288" class="small">C · 6</text>
+
+        <rect x="166" y="164" width="148" height="144" rx="22" fill="#FFFFFF" class="thinStroke" filter="url(#softShadow)"/>
+        <circle cx="240" cy="212" r="30" fill="#F4ECFF" class="thinStroke"/>
+        <path d="M220 212 C236 194 260 202 264 218 C248 226 234 224 220 212 Z" fill="#B983FF" class="thinStroke"/>
+        <text x="184" y="266" class="value">星尾露娜</text>
+        <text x="184" y="288" class="small">R · 8</text>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="30" y="768" width="330" height="52" rx="23" fill="#FFFFFF" class="thinStroke"/>
+        <g transform="translate(48 780)">
+          <circle cx="15" cy="10" r="10" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+        <g transform="translate(112 780)">
+          <rect x="5" y="0" width="20" height="20" rx="7" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+        <g transform="translate(176 780)">
+          <rect x="3" y="0" width="24" height="20" rx="5" fill="#FFD94A" class="thinStroke"/>
+          <text x="3" y="36" class="tabActive">图鉴</text>
+        </g>
+        <g transform="translate(240 780)">
+          <path d="M4 18 L14 2 L26 18 Z" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+        <g transform="translate(304 780)">
+          <circle cx="15" cy="10" r="10" fill="#EAF2FF" class="thinStroke"/>
+        </g>
+      </g>
+    </g>
+    <rect x="16" y="16" width="358" height="812" rx="32" fill="none" stroke="#18263D" stroke-width="2"/>
+    <rect x="140" y="20" width="110" height="25" rx="13" fill="#091525"/>
+  </g>
+
+  <g transform="translate(70 1010)">
+    <rect x="0" y="-36" width="1290" height="60" rx="22" fill="#FFFFFF" class="thinStroke"/>
+    <text x="24" y="1" class="label">减字原则：主界面只留名字、数值、动作；规则说明进入二级弹层。</text>
+  </g>
+</svg>

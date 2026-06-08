@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pokefish_adventure_map"]
+
+[ext_resource type="Script" path="res://godot/scripts/ui/adventure_map.gd" id="1_adventure_map"]
+
+[node name="AdventureMap" type="Control"]
+script = ExtResource("1_adventure_map")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pokefish_quest_board"]
+
+[ext_resource type="Script" path="res://godot/scripts/ui/quest_board.gd" id="1_quest_board"]
+
+[node name="QuestBoard" type="Control"]
+script = ExtResource("1_quest_board")

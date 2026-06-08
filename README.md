@@ -1,61 +1,48 @@
 # Pokefish
 
-这是 `Pokefish` 的第一版可玩 App Demo，围绕微信放置小游戏的核心循环开发：
+Pokefish is now a Godot-only iOS app project. The old Web and Capacitor code has been removed; the active app entry is the Godot project at the repository root.
 
-1. 鱼个体生成：每条鱼都有物种、稀有度、外观、性格、显性基因和隐性基因。
-2. 进化判定：进化由水域、饲料、等级、心情、亲密度、性格和基因共同加权。
-3. 鱼塘主界面：鱼会在水域里游动，玩家可以收取放置产出、孵化鱼蛋、尝试进化、生成鱼卡。
-4. App 页面：已包含鱼塘、孵化、图鉴、探索、任务五个页面。
-5. 长线循环：孵化新鱼、收集图鉴、派鱼探索、完成任务、获得资源奖励。
+## Project Entry
 
-当前视觉原型采用线条分明的 Q 版描边风格。鱼、背景、水草、珊瑚和砂地都使用统一的粗轮廓卡通语言，鱼游动时会强化身体、鱼鳍和尾巴的摆动。
-
-## 运行
-
-```bash
-npm install
-npm run dev
-```
-
-然后打开：
+Open this folder in Godot 4.6.3 or newer:
 
 ```text
-http://127.0.0.1:4173/
+project.godot
 ```
 
-## 操作
-
-- 点击鱼塘或鱼群名册里的鱼，可以切换当前观察对象。
-- 切换水域会改变进化倾向和放置产出。
-- 在孵化页购买鱼蛋，或直接使用已有鱼蛋孵化新鱼。
-- 在探索页派当前选中的鱼外出，带回泡泡币、贝壳、鱼蛋或珍珠。
-- 在任务页领取每日目标奖励。
-- 选择投喂材料后，进化概率会根据当前鱼的条件即时变化。
-- 点击“尝试进化”会投喂并进行一次概率判定。
-- 点击“生成鱼卡”会生成当前鱼的分享卡。
-- 点击“重置存档”会清空本地存档并重新生成初始鱼群。
-
-数据会保存在浏览器 `localStorage` 里，刷新页面不会丢失当前鱼群。
-
-## iOS App
-
-项目已经接入 Capacitor，静态游戏会构建到 `dist/`，再同步到 iOS 工程。
-
-```bash
-npm install
-npm run ios:sync
-```
-
-在 macOS 上安装 Xcode 和 CocoaPods 后，打开：
+Main scene:
 
 ```text
-ios/App/App.xcworkspace
+res://godot/scenes/ui/main_game.tscn
 ```
 
-也可以运行：
+The current mobile build is portrait-first and targets iPhone testing through Godot iOS export.
+
+## iPhone Debug Build
 
 ```bash
-npm run ios:open
+/Users/rpy/Documents/Claude/pokefish/godot/scripts/qa/ios_debug_deploy.sh
 ```
 
-在 Windows 环境只能生成和同步 iOS 工程；真机运行、模拟器调试、签名和 App Store/TestFlight 打包需要在 macOS + Xcode 中完成。
+## QA
+
+The QA scripts live under `godot/scripts/qa/`, but that directory is marked with `.gdignore` so it is not scanned as runtime app resources. Run QA scripts from filesystem paths instead of `res://` paths.
+
+Common verification:
+
+```bash
+/Users/rpy/Documents/Claude/pokefish/godot/scripts/qa/run_all_qa.sh
+```
+
+Generated visual snapshots are written to:
+
+```text
+godot/build/qa_snapshots/
+```
+
+## Notes
+
+- `resource_packages/` is a local source library for selecting assets and is excluded from export.
+- Selected game assets live under `godot/assets/`.
+- iOS App icon and launch splash sources live under `godot/assets/`.
+- iOS export output lives under `godot/build/ios/`.

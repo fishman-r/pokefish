@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pokefish_dex_panel"]
+
+[ext_resource type="Script" path="res://godot/scripts/ui/dex_panel.gd" id="1_dex_panel"]
+
+[node name="DexPanel" type="Control"]
+script = ExtResource("1_dex_panel")

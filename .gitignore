@@ -1,4 +1,8 @@
-node_modules/
-dist/
+.godot/
+.import/
+godot/build/*
+!godot/build/.gdignore
+resource_packages/*
+!resource_packages/.gdignore
 .DS_Store
 *.log

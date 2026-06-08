@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pokefish_partner_float"]
+
+[ext_resource type="Script" path="res://godot/scripts/ui/partner_float.gd" id="1_partner_float"]
+
+[node name="PartnerFloat" type="Control"]
+script = ExtResource("1_partner_float")

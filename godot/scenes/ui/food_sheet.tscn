@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pokefish_food_sheet"]
+
+[ext_resource type="Script" path="res://godot/scripts/ui/food_sheet.gd" id="1_food_sheet"]
+
+[node name="FoodSheet" type="Control"]
+script = ExtResource("1_food_sheet")
