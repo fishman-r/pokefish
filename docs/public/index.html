@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokefish</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #59687a;
+      --water: #dff7f3;
+      --foam: #f9fdfb;
+      --reef: #ffcf75;
+      --coral: #f36f68;
+      --line: rgba(23, 32, 51, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--water), var(--foam) 54%, #fff7df);
+    }
+    header, main, footer { width: min(960px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 22px 0 8px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-weight: 900; font-size: 20px; letter-spacing: 0.02em; }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; }
+    a { color: #126b8d; font-weight: 800; text-decoration: none; }
+    nav a { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, 0.72); }
+    .hero { padding: 48px 0 34px; display: grid; grid-template-columns: 1fr minmax(280px, 520px); gap: 34px; align-items: center; }
+    h1 { margin: 0; font-size: clamp(38px, 7vw, 76px); line-height: 0.95; }
+    .lead { color: var(--muted); font-size: 19px; line-height: 1.65; margin: 18px 0 24px; max-width: 620px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: var(--ink); color: white; }
+    .button.secondary { background: white; color: var(--ink); border: 1px solid var(--line); }
+    .preview { width: 100%; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 24px 70px rgba(20, 83, 91, 0.16); }
+    .panel { margin: 0 0 42px; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.76); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    h2 { margin: 0 0 12px; font-size: 24px; }
+    h3 { margin: 0 0 8px; font-size: 17px; }
+    p { font-size: 16px; line-height: 1.7; }
+    .muted { color: var(--muted); }
+    footer { padding: 0 0 36px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 760px) {
+      header { align-items: flex-start; flex-direction: column; }
+      .hero { grid-template-columns: 1fr; padding-top: 28px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Pokefish</div>
+    <nav aria-label="Public pages">
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Cozy pixel fish for your pocket.</h1>
+        <p class="lead">Pokefish is a portrait mobile game about raising cute fish, collecting pond rewards, hatching eggs, and filling a gentle aquarium journal.</p>
+        <div class="actions">
+          <a class="button" href="support.html">Get Support</a>
+          <a class="button secondary" href="privacy.html">Read Privacy Policy</a>
+        </div>
+      </div>
+      <img class="preview" src="screenshots/pokefish-readme-preview.png" alt="Pokefish game screenshots showing the pond, feeding, and catalog screens">
+    </section>
+
+    <section class="panel">
+      <h2>Game Overview</h2>
+      <div class="grid">
+        <div>
+          <h3>Raise</h3>
+          <p class="muted">Feed fish with limited food stock, watch their appetite, and collect idle pond rewards.</p>
+        </div>
+        <div>
+          <h3>Hatch</h3>
+          <p class="muted">Claim a daily fish egg, choose an egg to open, and discover new companions.</p>
+        </div>
+        <div>
+          <h3>Collect</h3>
+          <p class="muted">Unlock species and evolved forms in a compact handheld-style aquarium catalog.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>中文简介</h2>
+      <p class="muted">Pokefish 是一款竖屏像素风养鱼小游戏。玩家可以投喂伙伴、收取水域资源、领取每日鱼蛋、孵化新鱼，并在图鉴中慢慢收集不同鱼类和进化形态。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Pokefish is a local-save iPhone game. No accounts, ads, analytics, or tracking are used in the current version.</p>
+  </footer>
+</body>
+</html>
